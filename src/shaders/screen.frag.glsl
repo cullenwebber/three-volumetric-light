@@ -6,6 +6,7 @@ uniform sampler2D tBeam;
 uniform vec2 uBeamTexel;
 uniform float uBloomStrength;
 uniform float uGrainStrength;
+uniform float uContrast;
 uniform float uTime;
 
 varying vec2 vUv;
@@ -37,7 +38,13 @@ void main() {
 	#include <tonemapping_fragment>
 	#include <colorspace_fragment>
 
+	gl_FragColor.rgb = clamp(
+		(gl_FragColor.rgb - 0.5) * uContrast + 0.5,
+		0.0,
+		1.0
+	);
+
 	uvec2 seed = uvec2(gl_FragCoord.xy)
-		+ uvec2(mod(uTime * 60.0, 1024.0)) * uvec2(7919u, 104729u);
+		+ uvec2(mod( 60.0, 1024.0)) * uvec2(7919u, 104729u);
 	gl_FragColor.rgb -= vec3(hash(seed)) * uGrainStrength;
 }

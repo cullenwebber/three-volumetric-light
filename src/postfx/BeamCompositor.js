@@ -21,6 +21,7 @@ export default class BeamCompositor {
 		this.radius = 1;
 		this.bloomStrength = 2.5;
 		this.grainStrength = 0.04;
+		this.contrast = 1.2;
 
 		this.beam = new VolumetricBeam(spotLight, bounds);
 		this.beamScene = new THREE.Scene();
@@ -277,6 +278,7 @@ export default class BeamCompositor {
 				},
 				uBloomStrength: { value: this.bloomStrength },
 				uGrainStrength: { value: this.grainStrength },
+				uContrast: { value: this.contrast },
 				uTime: { value: 0 },
 			},
 			vertexShader: FULLSCREEN_VERTEX,
