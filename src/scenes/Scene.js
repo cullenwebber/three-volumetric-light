@@ -69,7 +69,7 @@ export default class Scene {
 	}
 
 	#responsiveDistanceScale() {
-		return THREE.MathUtils.clamp(1.7 / this.aspectRatio, 1, 2);
+		return THREE.MathUtils.clamp(1.7 / this.aspectRatio, 1, 1.5);
 	}
 
 	#addLights() {
