@@ -56,7 +56,6 @@ export default class Arm extends THREE.Group {
 
 	update(elapsed) {
 		if (this.fingerBones.length) {
-
 			const segmentRange = [
 				[-0.05, 0.06],
 				[-0.1, 0.05],

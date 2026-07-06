@@ -32,7 +32,7 @@ export default class Scene {
 		this.#setupCompositor();
 		this.#setupLightGradient();
 		this.#setupLightProbe();
-		this.#setupArmShading();
+		// this.#setupArmShading(); // Removed bent normals due to crashing
 		this.#primeGI();
 	}
 

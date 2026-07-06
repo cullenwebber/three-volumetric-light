@@ -164,7 +164,7 @@ export default class FloatingObjects extends THREE.Group {
 		uniforms.uMorph.value = morph;
 
 		const pulse = morph * (1.0 - morph) * 7.0;
-		this.glow.intensity = this.glowIntensity * (1.0 + 0.6 * pulse);
+		this.glow.intensity = this.glowIntensity * (1.0 + 0.5 * pulse);
 
 		this.rotation.y = elapsed * this.spinSpeed;
 
